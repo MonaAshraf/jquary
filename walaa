@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+$(function() {
+  var spans;
+  $(".it").click(function(event) {
+    $(".it").css("background-color","");
+    $(this).css('background-color', 'rgb(15, 160, 197)');
+
+  spans = event.target.id;
+
+// window.spans = event.target.id;
+  //  alert($spans);
+  });
+  $(".M").click(function(event) {
+
+
+  var arritems = ["pen", "book", "pencil","ruler","eraser"];
+
+if (jQuery.inArray( spans,  arritems) !== -1) {
+  $(this).html(spans);
+  $(this).append("<img id='theImg' src='tikMark-small.png'/>");
+  var itemHide = "#"+spans;
+  $(itemHide ).css("visibility", "hidden");
+}else {
+  var text = $(this).html(spans);
+text.show();
+  var text2 = $(this).append("<img id='theImg' src='crossMark-small.png'/>")
+text.show();
+
+setTimeout(function(){
+   text.empty();
+}, 750);
+setTimeout(function(){
+   text2.empty();
+}, 750);
+  // $(this).html(spans);
+  // $(this).append("<img id='theImg' src='tikMark-small.png'/>");
+
+}
+
+
+
+//var spansId = event.target.id;
+
+
+
+ //alert(spans );
+  });
+
+  $('#replay_icon').click(function() {
+    location.reload();
+});
+  $('.close_icon').click(function() {
+    location.reload();
+});
+  $('#help_icon').click(function() {
+  $("#underDiv1").css( "opacity", "0.2");
+  $("#underDiv2").css( "opacity", "0.2");
+  $("#underDiv3").css( "opacity", "0.2");
+ $(".it").remove();
+
+  $(".bigDiv4").css('background-image', 'none');
+  $(".bigDiv4").css('background-color', '#fff');
+  // $("#aboveDiv2")
+    $(".bigDiv5").append('<p style="font-size: large">Help content goes here. <img  class="close_icon Imges" style="float:right;" src="close_icon.png"/></p> ');
+
+
+});
+  $('#resourse_icon').click(function() {
+  $("#underDiv1").css( "opacity", "0.2");
+  $("#underDiv2").css( "opacity", "0.2");
+  $("#underDiv3").css( "opacity", "0.2");
+ $(".it").remove();
+
+  $(".bigDiv4").css('background-image', 'none');
+
+  // $("#aboveDiv2")
+    $(".bigDiv5").append("<img  class='close Imges Im '   src='close_icon.png'/><img  id='dummyImge' src='dummy.jpg'/>   ");
+
+
+});
+
+$("#showAns_icon").click(function() {
+
+    var arritems = ["pen", "book", "pencil","ruler","eraser"];
+    var i = 1;
+    arritems.forEach(function(item) {
+
+      $("#"+i).html(item);
+      $("#"+i).append("<img id='theImg' src='tikMark-small.png'/>");
+       i++;
+
+
+    });
+  });
+});
+
+  // alert($spans);
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task</title>
+<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<style>
+body,html {
+height: 100%;
+    position: relative;
+
+}
+
+.bigDiv1 {
+
+  width:68%;
+ height: 13vh;
+
+}
+
+.bigDiv2 {
+
+  width:68%;
+  height:75vh;
+background: #0fa0c5;
+}
+.bigDiv3 {
+
+  width:68%;
+  background:#deecf6;
+    height:12vh;
+}
+.bigDiv4 {
+position: absolute;
+  width:65%;
+  top:45%;
+  left: 17.5%;
+
+
+  z-index: 1;
+
+border-bottom:3px solid #f5821f;
+border-left: 3px solid #f5821f;
+border-right: 3px solid #f5821f;
+ border-radius: 0px 0px 13px 13px;
+     background-image: url("p15e11.png");
+      background-size: 100% 100%;
+       background-repeat: no-repeat;
+      height:45%;
+}
+.bigDiv5 {
+position: absolute;
+  width:65%;
+  top: 10%;
+  left: 17.5%;
+  z-index: 1;
+  border-radius: 13px;
+  border-top:3px solid #f5821f;
+  border-left: 3px solid #f5821f;
+  border-right: 3px solid #f5821f;
+     background-color: #fff;
+      height:55%;
+}
+.bigDiv6 {
+position: absolute;
+  width:65%;
+  top: 10%;
+  left: 17.5%;
+  z-index: 1;
+  border-radius: 13px;
+    border: 3px solid #f5821f;
+     background-color: #fff;
+      height:95%;
+}
+
+#scissors{
+  background-color: #fff;
+}
+/* .opa{
+ opacity: 0.2;
+} */
+.it{
+ background-color:#fff;
+ font-size: large;
+}
+.a{
+
+background-color: #fff;
+}
+.Im{
+
+    position: absolute;
+    top:10vh;
+    left: 5%;
+
+}
+.M{
+text-align: center;
+color: black;
+
+
+}
+#dummyImge{
+ border:3vh solid #fff;
+  height:80vh;
+    width:100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.Divhead{
+
+font-size: 38px;
+
+font-weight: 500;
+line-height: 1.1;
+
+}
+.DivItems{
+border-radius: 13px;
+  border: 2px solid #0fa0c5;
+  text-align: center;
+  height:8vh;
+  top: 5vh;
+}
+.DivItems2{
+border-radius: 13px;
+  border: 2px solid #0fa0c5;
+  text-align: center;
+  height:8vh;
+  top: 10vh;
+}
+.DivItems3{
+
+  height:25vh;
+
+}
+.DivItems4{
+
+
+  text-align: left;
+  height:9vh;
+
+}
+.DivItems5{
+
+
+  text-align:left;
+  height:9vh;
+
+}
+.DivItems2span{
+
+
+  top: 10vh;
+}
+#theImg{
+  height:3vh;
+  width:10%
+}
+.Imges{
+  height:7vh;
+  width:6%
+}
+html { font-size: 0.25rem; }
+
+@media (min-width: 576px) {
+    html { font-size:0.5rem; }
+}
+@media (min-width: 768px) {
+    html { font-size: 0.5rem; }
+}
+@media (min-width: 992px) {
+    html { font-size: 0.75rem; }
+}
+@media (min-width: 1200px) {
+    html { font-size: 0.75rem; }
+}
+</style>
+
+
+
+
+
+  <!-- <script >
+          function showitem(item) {
+            var myitem =item;
+
+            var div = document.getElementById( myitem );
+            if (document.getElementById(myitem).style.background) {//<-- already having bg
+              document.getElementById(myitem).style.background = "#0fa0c5";//<-- remove it
+            } else {
+              document.getElementById(myitem).style.background = "#0fa0c5";
+            }
+
+  var items = ["pen", "book", "pencil","ruler","eraser"];
+
+}
+
+
+
+
+
+      </script> -->
+</head>
+<body>
+  <div class="d-flex align-items-center  flex-column justify-content-center a" id="underDiv1" >
+    <div class="container bigDiv1">
+        <div class="row">
+            <div class="col-md-12">
+                <h1><span class="" > What's in the basket?  Choose and write. </span>
+              <img id="resourse_icon"class="Imges" src="resourse_icon.png" class="rounded float-right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img id="help_icon"class="Imges" src="help_icon.png" class=""></h1>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="d-flex align-items-center flex-column justify-content-center   text-white "  id="underDiv2">
+
+      <div class="bigDiv2">
+
+      </div>
+  </div>
+  <div class="d-flex align-items-center  flex-column justify-content-center a " id="underDiv3">
+    <div class="container bigDiv3">
+        <div class="row">
+            <div class="col-md-12">
+              <img id="replay_icon"class="Imges" src="replay_icon.png"class="">
+              <img id="showAns_icon"class="Imges" src="showAns_icon.png"class="">
+            </div>
+        </div>
+    </div>
+  </div>
+<div>
+  <div class="d-flex align-items-center flex-column justify-content-center   "  id="aboveDiv1">
+
+      <div class="bigDiv5">
+  <div class="row justify-content-around">
+    <div id="scissors" onclick="showMsg('scissors')" class="col-3 DivItems it">
+      <b><span class="one" >scissors</span></b>
+    </div>
+    <div id="eraser" onclick="showMsg('eraser')" class="col-2 DivItems it">
+      <b><span class="DivItems2span">eraser</span></b>
+    </div>
+    <div id="ruler" onclick="showMsg('ruler')" class="col-2 DivItems it">
+      <b><span class="three">ruler</span></b>
+    </div>
+    <div id="bag" onclick="showMsg('bag')" class="col-2 DivItems it">
+    <b>  <span class="four">bag</span></b>
+    </div>
+  </div>
+  <div class="row justify-content-around">
+    <div id="pencil case"onclick="showMsg('pencil case')" class="col-3 DivItems2 it">
+      <b><span class="one">pencil case</span></b>
+    </div>
+    <div id="pencil" onclick="showMsg('pencil')" class="col-2 DivItems2 it">
+      <b><span class="two">pencil</span></b>
+    </div>
+    <div id="book" onclick="showMsg('book')" class="col-2 DivItems2 it">
+      <b><span class="three">book</span></b>
+    </div>
+    <div id="pen" onclick="showMsg('pen')" class="col-2 DivItems2 it">
+    <b>  <span class="four ">pen</span></b>
+    </div>
+  </div>
+</div>
+</div>
+  <div class="d-flex align-items-center flex-column justify-content-center   text-white "  id="aboveDiv2">
+
+      <div class="bigDiv4">
+
+        <div class="container">
+          <div class="row DivItems3">
+
+          </div>
+          <div class="row justify-content-between DivItems4">
+            <div id="1"class="col-4 M font-weight-bold">
+
+            </div>
+
+            <div id="2"class="col-4 M font-weight-bold">
+
+            </div>
+          </div>
+          <div class="row DivItems5">
+            <div id="3" class="col M font-weight-bold">
+
+            </div>
+            <div id="4"class="col-5 M font-weight-bold">
+
+            </div>
+            <div id="5"class="col M font-weight-bold">
+
+            </div>
+          </div>
+
+          </div>
+
+        </div>
+      </div>
+  </div>
+
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
